@@ -250,8 +250,40 @@ header.dark-mode {
     color: #ffffff;
 }
 
-aside h3.dark-mode {
-    color: black;  /* Cor preta para o título "Categorias" no modo escuro */
+
+
+/* Estilo do modo escuro */
+footer.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.contact.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.contact.dark-mode h2{
+    color: white;
+}
+.contact.dark-mode p{
+    color: white;
+}
+.contact.dark-mode a {
+    color: white
+}
+
+aside.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+aside.dark-mode ul li a {
+    color: #00bcd4;
+}
+
+aside.dark-mode ul li a:hover {
+    color: #fff;
 }
 
 /* Responsividade */
@@ -321,3 +353,21 @@ aside h3.dark-mode {
         width: 100%;
     }
 }
+
+/*  */
+
+.video-container {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    display: none; /* Inicialmente oculto */
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+

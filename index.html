@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Pulso Digital - Notícias</title>
 
     <!-- fonts -->
@@ -30,7 +31,7 @@
         <nav>
             <ul>
                 <li><a href="ideia.html">Ideologia</a></li>
-                <li><a href="#">Discord</a></li>
+                <li><a href="https://discord.gg/fcwNn7Fs" target="_blank">Discord</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -38,24 +39,27 @@
 
     <main>
         <div class="content">
-            <article class="news">
+            <article class="news" data-aos="zoom-in-up">
                 <h2>Novos Avanços na Inteligência Artificial</h2>
                 <p class="date">06 de Novembro de 2024</p>
                 <p>A inteligência artificial tem avançado de forma acelerada, com novos algoritmos sendo desenvolvidos a cada mês. Descubra o que há de mais recente no campo da IA...</p>
-                <a href="#">Leia mais</a>
+                <a href="#" class="read-more" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">Leia mais</a>
+                <div class="video-container"></div>
             </article>
-
-            <article class="news">
+            
+            <article class="news" data-aos="zoom-in-up">
                 <h2>Lançamento do Novo Smartphone X100</h2>
                 <p class="date">05 de Novembro de 2024</p>
                 <p>A empresa líder em tecnologia acaba de anunciar o lançamento de seu mais novo smartphone, o X100. Confira os detalhes e recursos dessa novidade...</p>
-                <a href="#">Leia mais</a>
+                <a href="#" class="read-more" data-video="https://www.youtube.com/embed/example2">Leia mais</a>
+                <div class="video-container"></div>
             </article>
+            
             
             <button id="loadMoreBtn">Carregar mais notícias</button>
         </div>
 
-        <aside>
+        <aside data-aos="zoom-in-up">
             <h3>Temas em Alta</h3>
             <ul>
                 <li><a href="#">Política</li>
@@ -66,17 +70,17 @@
         </aside>
     </main>
 
-    <section id="contato" class="contact">
-        <h2>Entre em Contato</h2>
-        <p>Siga-nos e entre em contato através das nossas redes sociais:</p>
+    <section id="contato" class="contact" data-aos="zoom-in-up">
+        <h2 style="text-decoration: none;">Entre em Contato</h2>
+        <p style="text-decoration: none;">Siga-nos e entre em contato através das nossas redes sociais:</p>
         <div class="social-links" >
-            <a href="https://wa.me/11956395434" target="_blank" class="social-icon">
+            <a href="https://wa.me/5511956395434?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20o%20Pulso%20digital..." target="_blank" class="social-icon">
                 <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
             <a href="https://www.instagram.com/seuusuario" target="_blank" class="social-icon">
                 <i class="fab fa-instagram"></i> Instagram
             </a>
-            <a href="https://www.facebook.com/seuusuario" target="_blank" class="social-icon">
+            <a href="https://www.facebook.com/share/187p82pEeq/" target="_blank" class="social-icon">
                 <i class="fab fa-facebook"></i> Facebook
             </a>
         </div>
@@ -92,5 +96,9 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>

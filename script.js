@@ -15,6 +15,15 @@ function toggleDarkMode() {
     newsItems.forEach(function(item) {
         item.classList.toggle("dark-mode");
     });
+    document.body.classList.toggle("dark-mode");
+
+    // Atualiza os elementos específicos
+    document.querySelector("footer").classList.toggle("dark-mode");
+    document.querySelector(".contact").classList.toggle("dark-mode");
+    document.querySelector("aside").classList.toggle("dark-mode");
+
+    // Adiciona logs para depuração (opcional)
+    console.log("Modo escuro alternado!");
 }
 
 // Carregar mais notícias ao clicar no botão
@@ -22,10 +31,11 @@ document.getElementById("loadMoreBtn").addEventListener("click", function() {
     const newArticle = document.createElement("article");
     newArticle.classList.add("news");
     newArticle.innerHTML = `
-        <h2>Nova Atualização sobre o Sistema Operacional X</h2>
-        <p class="date">04 de Novembro de 2024</p>
-        <p>O sistema operacional X acaba de receber uma grande atualização, com melhorias de desempenho e novos recursos...</p>
-        <a href="#">Leia mais</a>
+        <h2>Novos Avanços na Inteligência Artificial</h2>
+            <p class="date">06 de Novembro de 2024</p>
+            <p>A inteligência artificial tem avançado de forma acelerada, com novos algoritmos sendo desenvolvidos a cada mês. Descubra o que há de mais recente no campo da IA...</p>
+            <a href="#" class="read-more" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">Leia mais</a>
+        <div class="video-container"></div>
     `;
     document.querySelector(".content").appendChild(newArticle);
     this.style.display = "none"; // Esconde o botão depois de carregar mais notícias
@@ -36,3 +46,43 @@ const themeToggleBtn = document.createElement("button");
 themeToggleBtn.textContent = "Alternar Modo Escuro";
 themeToggleBtn.onclick = toggleDarkMode;
 document.querySelector("header").appendChild(themeToggleBtn);
+
+
+// -------------
+
+document.addEventListener('DOMContentLoaded', () => {
+    const readMoreLinks = document.querySelectorAll('.read-more');
+
+    readMoreLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const videoUrl = link.getAttribute('data-video');
+            const videoContainer = link.nextElementSibling;
+
+            if (!videoUrl) {
+                console.error('URL do vídeo não encontrada no atributo data-video.');
+                return;
+            }
+
+            // Verifica se o vídeo já está carregado
+            if (videoContainer.innerHTML.trim() === '') {
+                videoContainer.innerHTML = `
+                    <iframe 
+                        src="${videoUrl}" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>`;
+                videoContainer.style.display = 'block';
+            } else {
+                // Remove o vídeo se já estiver carregado (alternar exibição)
+                videoContainer.innerHTML = '';
+                videoContainer.style.display = 'none';
+            }
+        });
+    });
+});
+
+// dark mode
+
