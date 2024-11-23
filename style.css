@@ -258,6 +258,13 @@ footer.dark-mode {
     color: #fff;
 }
 
+.social-links.dark-mode i{
+    color: #666;
+}
+
+.social-links.dark-mode a{
+    color: #666;
+}
 .contact.dark-mode {
     background-color: #333;
     color: #fff;
